@@ -1,4 +1,4 @@
-# Finance Dashboard — Backend API
+# Finance Data Processing — Backend API
 
 A Spring Boot 3 REST backend for managing financial records with role-based access control, JWT authentication, and dashboard summary APIs.
 
