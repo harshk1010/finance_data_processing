@@ -92,10 +92,6 @@ Create the database before starting the application:
 CREATE DATABASE dashboard;
 ```
 
-The schema is auto-managed by Hibernate (`spring.jpa.hibernate.ddl-auto=update`). Tables are created automatically on first startup.
-
-If you are running the application for the first time on an existing database that has a `users` table without `updated_by_user_id`, run:
-
 ```sql
 ALTER TABLE users ADD COLUMN IF NOT EXISTS updated_by_user_id BIGINT;
 ALTER TABLE financial_records ADD COLUMN IF NOT EXISTS updated_by_user_id BIGINT;
@@ -120,8 +116,6 @@ app.jwt.expiration-ms=86400000   # 24 hours
 # Server
 server.port=8080
 ```
-
-> **Note:** The default config connects to port `1025`. Change to `5432` if using a standard PostgreSQL installation.
 
 ---
 
@@ -203,7 +197,7 @@ Content-Type: application/json
 
 | Method | Endpoint | Required Role | Description |
 |---|---|---|---|
-| POST | `/api/user/create` | None (open) | Create a new user |
+| POST | `/api/user/create` | ADMIN | Create a new user |
 | GET | `/api/user/get` | ADMIN | List users with optional filters |
 | POST | `/api/user/update` | ADMIN | Update user details |
 | POST | `/api/user/delete` | ADMIN | Soft delete a user (sets status to INACTIVE) |
