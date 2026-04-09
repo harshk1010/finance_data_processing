@@ -129,10 +129,6 @@ mvn spring-boot:run
 
 Application starts on `http://localhost:8080`.
 
-Swagger UI available at: `http://localhost:8080/swagger-ui.html`
-
-API docs (JSON) available at: `http://localhost:8080/api-docs`
-
 ---
 
 ## Authentication
