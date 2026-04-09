@@ -92,11 +92,6 @@ Create the database before starting the application:
 CREATE DATABASE dashboard;
 ```
 
-```sql
-ALTER TABLE users ADD COLUMN IF NOT EXISTS updated_by_user_id BIGINT;
-ALTER TABLE financial_records ADD COLUMN IF NOT EXISTS updated_by_user_id BIGINT;
-```
-
 ---
 
 ## Configuration
@@ -147,7 +142,7 @@ The API uses JWT Bearer token authentication.
 ### Flow
 
 ```
-POST /api/user/create   →  create first admin (no token required)
+POST /api/user/create   →  create admin 
 POST /api/auth/login    →  get JWT token
 Authorization: Bearer <token>  →  pass on all subsequent requests
 ```
